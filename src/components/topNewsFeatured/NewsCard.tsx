@@ -1,4 +1,5 @@
 "use client"
+import {Article} from "@/types";
 import {
     FeaturedButton,
     FeaturedButtonWrapper,
@@ -12,37 +13,35 @@ import {
 
 interface NewsCardProps {
     data: Article;
-    top?: boolean;
+    accent?: boolean;
 }
 
-export const TopNewsFeatured = () => {
-    const {topNews, formattedDate, formattedTime, isLoading, error} = useTopNewsFeatured();
-
+export const NewsCard = ({ data, accent = false }: NewsCardProps) => {
+    const { formattedDate, formattedTime, isLoading, error} = useTopNewsFeatured();
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error</div>;
 
     return <section>
-        <FeaturedWrapper>
+        <FeaturedWrapper accent={accent}>
             <FeaturedTitle>
-                <a href={topNews.url} target="_blank" rel="noopener noreferrer">
-                    {topNews.title}
+                <a href={data.url} target="_blank" rel="noopener noreferrer">
+                    {data.title}
                 </a>
             </FeaturedTitle>
 
-            <FeaturedMeta>By {topNews.author}</FeaturedMeta>
+            {data.author && <FeaturedMeta>By {data.author}</FeaturedMeta>}
             <FeaturedMeta>
                 Published {formattedDate} {formattedTime}
             </FeaturedMeta>
+            {data.urlToImage && <FeaturedImage src={data.urlToImage} alt="cover"/>}
+            <FeaturedDescription>{data.description}</FeaturedDescription>
+            <FeaturedDescription>{data.content}</FeaturedDescription>
 
-            <FeaturedImage src={topNews.urlToImage} alt="cover"/>
-            <FeaturedDescription>{topNews.description}</FeaturedDescription>
-
-            <FeaturedButtonWrapper>
-                <FeaturedButton onClick={() => window.open(topNews.url, "_blank")}>
-                    Keep Reading
-                </FeaturedButton>
+            <FeaturedButtonWrapper accent={accent}>
+                    <FeaturedButton onClick={() => window.open(data.url, "_blank")} accent={accent}>
+                        Keep Reading
+                    </FeaturedButton>
             </FeaturedButtonWrapper>
         </FeaturedWrapper>
     </section>
 };
-

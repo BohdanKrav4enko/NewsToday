@@ -10,7 +10,7 @@ Clone the repository and install dependencies:
 
 ```bash
 git clone <your-repo-url>
-cd news-today
+cd NewsToday
 pnpm install
 ```
 Run the development server:
