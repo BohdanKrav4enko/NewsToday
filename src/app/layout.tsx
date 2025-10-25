@@ -4,7 +4,7 @@ import "./globals.css";
 import {AppProviders} from "@/app/Providers";
 import {GlobalStyle} from "@/styles/GlobalStyle";
 import React from "react";
-import {Container, Header} from "@/components";
+import {Container} from "@/components";
 
 
 const anton = Anton({subsets: ["latin"], weight: "400", variable: "--font-anton"});
@@ -33,7 +33,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AppProviders>
             <GlobalStyle/>
-            <Header/>
+            {/*<Header/>*/}
             <Container>
                 {children}
             </Container>
