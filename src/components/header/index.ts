@@ -28,5 +28,6 @@ export {
     StyledYoutube,
     ContactText,
     StyledBurger,
-    StyledSearch
+    StyledSearch,
+    CompactHeaderWrapper
 } from "./styles/HeaderStyle"

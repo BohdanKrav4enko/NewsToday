@@ -22,6 +22,9 @@ const BaseHeader = styled.header<{position?: string}>`
 export const HeaderDesktopWrapper = styled(BaseHeader)`
     @media (max-width: 1023px) { display: none; }
 `;
+export const CompactHeaderWrapper = styled(BaseHeader)`
+    @media (max-width: 1023px) { display: none; }
+`;
 export const HeaderTabletWrapper = styled(BaseHeader)`
     @media (max-width: 767px), (min-width: 1024px) { 
         display: none;
