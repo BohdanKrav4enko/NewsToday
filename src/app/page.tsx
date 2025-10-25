@@ -19,7 +19,7 @@ export default function Home() {
             <NewsCard data={topNews} accent={true}/>
             <NewsList data={data.articles}/>
             {!isLimitReached && (
-                <ReadMoreStoriesButton children={"Read More Stories"} onClick={loadMore}/>
+                <ReadMoreStoriesButton text={"Read More Stories"} onClick={loadMore}/>
             )}
         </>
     );

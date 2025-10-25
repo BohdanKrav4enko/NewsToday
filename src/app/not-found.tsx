@@ -11,9 +11,9 @@ export default function NotFound() {
                 fontFamily: 'font-family: "Old Standard TT", sans-serif',
                 textTransform: 'uppercase'
             }}>Oops!</h1>
-            <p>You've reached our 404 page.</p>
+            <p>You reached our 404 page.</p>
             <Link href="/">
-                <ReadMoreStoriesButton children={"Read More Stories"}/>
+                <ReadMoreStoriesButton text={"Read More Stories"}/>
             </Link>
         </div>
     );

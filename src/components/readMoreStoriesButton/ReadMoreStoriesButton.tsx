@@ -3,14 +3,14 @@ import React from "react";
 
 interface ReadMoreStoriesButtonProps {
     onClick?: () => void;
-    children: string;
+    text: string;
 }
 
-export const ReadMoreStoriesButton: React.FC<ReadMoreStoriesButtonProps> = ({ onClick, children }) => {
+export const ReadMoreStoriesButton: React.FC<ReadMoreStoriesButtonProps> = ({ onClick, text }) => {
     return (
         <ReadMoreStoriesWrapper>
             <FeaturedButton onClick={onClick} accent={true}>
-                {children}
+                {text}
             </FeaturedButton>
         </ReadMoreStoriesWrapper>
     );
